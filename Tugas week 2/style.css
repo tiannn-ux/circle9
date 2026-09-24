@@ -1,127 +1,146 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+/* Custom CSS untuk Modul Knowledge Base - Tema Dark & Gold/Kuning GitHub */
+
+:root {
+  --bg-primary: #0d1117;
+  --bg-secondary: #161b22;
+  --border-color: #30363d;
+  --text-primary: #f0f6fc;
+  --text-secondary: #8b949e;
+  --gold-primary: #d4af37;
+  --gold-hover: #f1e05a;
+  --gold-dark: #b8860b;
 }
+
 body {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  background: url(sasas.jpg) no-repeat;
-  background-size: cover;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
 }
-.container {
-  position: relative;
-  max-width: 700px;
-  width: 100%;
-  background: transparent;
-backdrop-filter: blur(10px);
-  padding: 25px;
+
+/* Navigasi Navbar Khas GitHub */
+.navbar-github {
+  background-color: var(--bg-secondary) !important;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.navbar-github .navbar-brand {
+  color: var(--gold-primary) !important;
+}
+
+.navbar-github .nav-link {
+  color: var(--text-secondary) !important;
+}
+
+.navbar-github .nav-link.active,
+.navbar-github .nav-link:hover {
+  color: var(--gold-hover) !important;
+}
+
+/* Class Custom menerapkan padding, border, dan margin */
+.card-custom {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
   border-radius: 8px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-  
-}
-.container header {
-  font-size: 1.5rem;
-  color: #333;
-  font-weight: 500;
-  text-align: center;
-}
-.container .form {
-  margin-top: 30px;
-}
-.form .input-box {
-  width: 100%;
-  margin-top: 20px;
-  
-}
-.input-box label {
-  color: #333;
-  
-}
-.form :where(.input-box input, .select-box) {
-  position: relative;
-  height: 50px;
-  width: 100%;
-  outline: none;
-  font-size: 1rem;
-  color: #707070;
-  margin-top: 8px;
-  border: 1px solid blue;
-  border-radius: 6px;
-  padding: 0 15px;
-  
-}
-.input-box input:focus {
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
-}
-.form .column {
-  display: flex;
-  column-gap: 15px;
-}
-.form .gender-box {
-  margin-top: 20px;
-}
-.gender-box h3 {
-  color: #333;
-  font-size: 1rem;
-  font-weight: 400;
-  margin-bottom: 8px;
-}
-.form :where(.gender-option, .gender) {
-  display: flex;
-  align-items: center;
-  column-gap: 50px;
-  flex-wrap: wrap;
-}
-.form .gender {
-  column-gap: 5px;
-}
-.gender input {
-  accent-color: rgb(130, 106, 251);
-}
-.form :where(.gender input, .gender label) {
-  cursor: pointer;
-}
-.gender label {
-  color: #707070;
-}
-.address :where(input, .select-box) {
   margin-top: 15px;
+  margin-bottom: 25px;
+  padding: 10px;
 }
-.select-box select {
-  height: 100%;
-  width: 100%;
-  outline: none;
-  border: none;
-  color: #707070;
-  font-size: 1rem;
+
+/* Tombol Aksen Keemasan / Kuning */
+.btn-custom-gold {
+  background-color: var(--gold-primary);
+  color: #0d1117;
+  border: 1px solid var(--gold-primary);
+  padding: 8px 18px;
+  margin: 0;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
 }
-.form button {
-  height: 55px;
-  width: 100%;
-  color: #fff;
-  font-size: 1rem;
-  font-weight: 400;
-  margin-top: 30px;
-  border: none;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  background: rgb(130, 106, 251);
+
+.btn-custom-gold:hover {
+  background-color: var(--gold-hover);
+  color: #0d1117;
+  border-color: var(--gold-hover);
 }
-.form button:hover {
-  background: rgb(88, 56, 250);
+
+.btn-outline-gold {
+  background-color: transparent;
+  color: var(--gold-primary);
+  border: 1px solid var(--gold-primary);
+  padding: 8px 18px;
+  border-radius: 6px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
 }
-/*Responsive*/
-@media screen and (max-width: 500px) {
-  .form .column {
-    flex-wrap: wrap;
-  }
-  .form :where(.gender-option, .gender) {
-    row-gap: 15px;
-  }
+
+.btn-outline-gold:hover {
+  background-color: rgba(212, 175, 55, 0.1);
+  color: var(--gold-hover);
+  border-color: var(--gold-hover);
+}
+
+/* Styling Tabel Khas GitHub Dark */
+.table-github {
+  color: var(--text-primary);
+  background-color: var(--bg-secondary);
+}
+
+.table-github thead {
+  background-color: #21262d;
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.table-github th,
+.table-github td {
+  border-color: var(--border-color);
+}
+
+.table-github tbody tr:hover {
+  background-color: #21262d;
+}
+
+/* Form Element Styling */
+.form-control-github,
+.form-select-github {
+  background-color: #0d1117;
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  border-radius: 6px;
+}
+
+.form-control-github:focus,
+.form-select-github:focus {
+  background-color: #0d1117;
+  border-color: var(--gold-primary);
+  color: var(--text-primary);
+  box-shadow: 0 0 0 0.25rem rgba(212, 175, 55, 0.25);
+}
+
+.form-control-github::placeholder {
+  color: var(--text-secondary);
+}
+
+/* Badge Styling */
+.badge-gold {
+  background-color: rgba(212, 175, 55, 0.15);
+  color: var(--gold-hover);
+  border: 1px solid var(--gold-primary);
+}
+
+.badge-draft {
+  background-color: rgba(139, 148, 158, 0.15);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+}
+
+.text-gold {
+  color: var(--gold-primary) !important;
+}
+
+.text-github-muted {
+  color: var(--text-secondary) !important;
 }
