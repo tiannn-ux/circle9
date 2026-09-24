@@ -4,14 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tambah Artikel Knowledge Base</title>
-  <!-- Bootstrap 5 CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Custom Style -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Navigasi -->
   <nav class="navbar navbar-expand-lg navbar-dark navbar-github shadow-sm">
     <div class="container">
       <a class="navbar-brand fw-bold" href="index.html">
@@ -33,7 +30,6 @@
     </div>
   </nav>
 
-  <!-- Konten Utama -->
   <div class="container my-5">
     <div class="row justify-content-center">
       <div class="col-md-8">
@@ -45,14 +41,12 @@
           <div class="card-body p-4">
             <form action="#" method="POST">
               
-              <!-- Input Judul Artikel -->
               <div class="mb-3">
                 <label for="judul" class="form-label fw-semibold">Judul Artikel Solusi / Troubleshooting</label>
                 <input type="text" class="form-control form-control-github" id="judul" name="judul" placeholder="Contoh: Cara Reset Password Email" required>
               </div>
 
               <div class="row">
-                <!-- Dropdown Kategori Masalah -->
                 <div class="col-md-6 mb-3">
                   <label for="kategori" class="form-label fw-semibold">Kategori Masalah</label>
                   <select class="form-select form-select-github" id="kategori" name="kategori" required>
@@ -64,20 +58,16 @@
                   </select>
                 </div>
 
-                <!-- Input Nama Penulis -->
                 <div class="col-md-6 mb-3">
                   <label for="penulis" class="form-label fw-semibold">Nama Penulis / Teknisi</label>
                   <input type="text" class="form-control form-control-github" id="penulis" name="penulis" placeholder="Nama Lengkap Penulis" required>
                 </div>
               </div>
 
-              <!-- Textarea Langkah Troubleshooting -->
               <div class="mb-3">
                 <label for="langkah_troubleshooting" class="form-label fw-semibold">Langkah-Langkah Troubleshooting / Solusi</label>
                 <textarea class="form-control form-control-github" id="langkah_troubleshooting" name="langkah_troubleshooting" rows="4" placeholder="Tuliskan langkah-langkah penyelesaian secara detail..." required></textarea>
               </div>
-
-              <!-- Radio Button Status -->
               <div class="mb-4">
                 <label class="form-label d-block fw-semibold">Status Artikel</label>
                 <div class="form-check form-check-inline">
@@ -89,8 +79,6 @@
                   <label class="form-check-label" for="statusDraft">Draft</label>
                 </div>
               </div>
-
-              <!-- Tombol Aksi -->
               <div class="d-flex justify-content-between">
                 <a href="index.html" class="btn btn-outline-gold">Kembali</a>
                 <button type="submit" class="btn btn-custom-gold">Simpan Artikel</button>
