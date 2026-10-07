@@ -54,9 +54,15 @@
               <div class="row">
                 <!--kategorinya  -->
                 <div class="col-md-6 mb-3">
-                  <label for="kategori" class="form-label fw-semibold">Kategori Masalah</label>
-                  <input type="text" class="form-control form-control-github" id="kategori" name="kategori" placeholder="Contoh: Hardware / Software" required>
-                </div>
+                <label for="kategori" class="form-label fw-semibold">Kategori Masalah</label>
+                 <select class="form-select form-control-github" id="kategori" name="kategori" required>
+                <option value="" disabled selected>-- Pilih Kategori --</option>
+               <option value="Hardware">Hardware</option>
+               <option value="Software">Software</option>
+                <option value="Jaringan">Jaringan</option>
+                <option value="Akses & Akun">Akses & Akun</option>
+                </select>
+              </div>
 
                 <!-- buat nama  -->
                 <div class="col-md-6 mb-3">
