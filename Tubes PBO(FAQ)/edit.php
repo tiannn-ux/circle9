@@ -60,10 +60,15 @@ if (!$data) {
                 <input type="text" class="form-control form-control-github" name="kategori" value="<?= htmlspecialchars($data['kategori']); ?>" required>
               </div>
 
-              <div class="col-md-6 mb-3">
-                <label class="form-label fw-semibold">Nama Penulis / Teknisi</label>
-                <input type="text" class="form-control form-control-github" name="penulis" value="<?= htmlspecialchars($data['penulis']); ?>" required>
-              </div>
+             <div class="col-md-6 mb-3">
+              <label for="kategori" class="form-label fw-semibold">Kategori Masalah</label>
+              <select class="form-select form-control-github" id="kategori" name="kategori" required>
+                <option value="Hardware" <?= ($data['kategori'] == 'Hardware') ? 'selected' : ''; ?>>Hardware</option>
+                <option value="Software" <?= ($data['kategori'] == 'Software') ? 'selected' : ''; ?>>Software</option>
+                <option value="Jaringan" <?= ($data['kategori'] == 'Jaringan') ? 'selected' : ''; ?>>Jaringan</option>
+                <option value="Akses & Akun" <?= ($data['kategori'] == 'Akses & Akun') ? 'selected' : ''; ?>>Akses & Akun</option>
+              </select>
+            </div>
             </div>
 
             <div class="mb-3">
