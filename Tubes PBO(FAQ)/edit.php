@@ -54,12 +54,6 @@ if (!$data) {
               <input type="text" class="form-control form-control-github" name="judul" value="<?= htmlspecialchars($data['judul']); ?>" required>
             </div>
 
-            <div class="row">
-              <div class="col-md-6 mb-3">
-                <label class="form-label fw-semibold">Kategori Masalah</label>
-                <input type="text" class="form-control form-control-github" name="kategori" value="<?= htmlspecialchars($data['kategori']); ?>" required>
-              </div>
-
              <div class="col-md-6 mb-3">
               <label for="kategori" class="form-label fw-semibold">Kategori Masalah</label>
               <select class="form-select form-control-github" id="kategori" name="kategori" required>
