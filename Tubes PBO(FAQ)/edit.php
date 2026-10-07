@@ -63,12 +63,15 @@ if (!$data) {
                 <option value="Akses & Akun" <?= ($data['kategori'] == 'Akses & Akun') ? 'selected' : ''; ?>>Akses & Akun</option>
               </select>
             </div>
-            </div>
 
-            <div class="mb-3">
+              <div class="mb-3">
               <label class="form-label fw-semibold">Langkah-Langkah Troubleshooting / Solusi</label>
               <textarea class="form-control form-control-github" name="langkah_troubleshooting" rows="4" required><?= htmlspecialchars($data['langkah_troubleshooting']); ?></textarea>
             </div>
+            
+            </div>
+
+          
 
             <div class="mb-4">
               <label class="form-label d-block fw-semibold">Status Artikel</label>
