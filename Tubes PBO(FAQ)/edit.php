@@ -1,7 +1,6 @@
 <?php
 include 'koneksi.php';
 $koneksi = getKoneksi();
-
 $id = $_GET['id'] ?? null;
 
 if (!$id) {
@@ -29,7 +28,7 @@ if (!$data) {
 </head>
 <body>
 
-<!-- navbar cenahh -->
+  <!-- Navigasi -->
   <nav class="navbar navbar-expand-lg navbar-dark navbar-github shadow-sm">
     <div class="container">
       <a class="navbar-brand fw-bold" href="index.php">
@@ -38,7 +37,7 @@ if (!$data) {
     </div>
   </nav>
 
-  <!-- form buat ngeditnya  -->
+
   <div class="container py-5">
     <div class="row justify-content-center">
       <div class="col-lg-8">
@@ -46,7 +45,7 @@ if (!$data) {
           <h3 class="fw-bold mb-3 text-gold border-bottom border-secondary pb-2">Edit Artikel Solusi</h3>
           
           <form action="proses-edit.php" method="POST">
-            <!-- buat nginput id nya -->
+            <!-- input id hidden cenah -->
             <input type="hidden" name="id" value="<?= $data['id']; ?>">
 
             <div class="mb-3">
@@ -54,24 +53,29 @@ if (!$data) {
               <input type="text" class="form-control form-control-github" name="judul" value="<?= htmlspecialchars($data['judul']); ?>" required>
             </div>
 
-             <div class="col-md-6 mb-3">
-              <label for="kategori" class="form-label fw-semibold">Kategori Masalah</label>
-              <select class="form-select form-control-github" id="kategori" name="kategori" required>
-                <option value="Hardware" <?= ($data['kategori'] == 'Hardware') ? 'selected' : ''; ?>>Hardware</option>
-                <option value="Software" <?= ($data['kategori'] == 'Software') ? 'selected' : ''; ?>>Software</option>
-                <option value="Jaringan" <?= ($data['kategori'] == 'Jaringan') ? 'selected' : ''; ?>>Jaringan</option>
-                <option value="Akses & Akun" <?= ($data['kategori'] == 'Akses & Akun') ? 'selected' : ''; ?>>Akses & Akun</option>
-              </select>
+            <div class="row">
+              <!-- Masalah lagi aja -->
+              <div class="col-md-6 mb-3">
+                <label class="form-label fw-semibold">Kategori Masalah</label>
+                <select class="form-select form-control-github" name="kategori" required>
+                  <option value="Hardware" <?= ($data['kategori'] == 'Hardware') ? 'selected' : ''; ?>>Hardware</option>
+                  <option value="Software" <?= ($data['kategori'] == 'Software') ? 'selected' : ''; ?>>Software</option>
+                  <option value="Jaringan" <?= ($data['kategori'] == 'Jaringan') ? 'selected' : ''; ?>>Jaringan</option>
+                  <option value="Akses & Akun" <?= ($data['kategori'] == 'Akses & Akun') ? 'selected' : ''; ?>>Akses & Akun</option>
+                </select>
+              </div>
+
+              <!-- Nama mu siapa? -->
+              <div class="col-md-6 mb-3">
+                <label class="form-label fw-semibold">Nama Penulis / Teknisi</label>
+                <input type="text" class="form-control form-control-github" name="penulis" value="<?= htmlspecialchars($data['penulis']); ?>" required>
+              </div>
             </div>
 
-              <div class="mb-3">
+            <div class="mb-3">
               <label class="form-label fw-semibold">Langkah-Langkah Troubleshooting / Solusi</label>
               <textarea class="form-control form-control-github" name="langkah_troubleshooting" rows="4" required><?= htmlspecialchars($data['langkah_troubleshooting']); ?></textarea>
             </div>
-            
-            </div>
-
-          
 
             <div class="mb-4">
               <label class="form-label d-block fw-semibold">Status Artikel</label>
