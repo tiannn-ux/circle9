@@ -14,28 +14,32 @@
       <th scope="col">Jenis Gangguan IT</th>
       <th scope="col">Tingkat Prioritas</th>
       <th scope="col">Deskripsi Gangguan</th>
-
+      <th scope="col">Aksi</th>
     </tr>
   </thead>
+  
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Software</td>
-      <td>Tinggi</td>
-      <td>Aplikasi tidak berjalan semestinya</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Network</td>
-      <td>Rendah</td>
-      <td>Internet lemot</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Hardware</td>
-      <td>Tinggi</td>
-      <td>Perangkat mudah overheat</td>
-    </tr>
+    <?php
+    include 'koneksi.php';
+
+    $data = mysqli_query($koneksi, "SELECT * FROM gangguan");
+    $no = 1;
+
+    while ($baris = mysqli_fetch_array($data)) {
+    ?>
+      <tr>
+        <th scope="row"><?php echo $no++; ?></th>
+        <td><?php echo $baris['jenis_gangguan']; ?></td>
+        <td><?php echo $baris['tingkat_prioritas']; ?></td>
+        <td><?php echo $baris['deskripsi_gangguan']; ?></td>
+        
+        <td>
+          <a href="hapus.php?id=<?php echo $baris['id']; ?>" class="btn btn-danger btn-sm" onclick="return confirm('Yakin ingin menghapus data ini?')">Hapus</a>
+        </td> 
+      </tr>
+    <?php
+    } 
+    ?>
   </tbody>
 </table>
 
