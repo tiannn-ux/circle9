@@ -45,6 +45,7 @@ if (!$data) {
           <h3 class="fw-bold mb-3 text-gold border-bottom border-secondary pb-2">Edit Artikel Solusi</h3>
           
           <form action="proses-edit.php" method="POST">
+            
             <!-- input id hidden cenah -->
             <input type="hidden" name="id" value="<?= $data['id']; ?>">
 
@@ -54,6 +55,7 @@ if (!$data) {
             </div>
 
             <div class="row">
+
               <!-- Masalah lagi aja -->
               <div class="col-md-6 mb-3">
                 <label class="form-label fw-semibold">Kategori Masalah</label>
