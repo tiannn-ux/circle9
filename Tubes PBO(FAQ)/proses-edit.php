@@ -1,6 +1,7 @@
 <?php
 include 'koneksi.php';
 $koneksi = getKoneksi();
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $id       = $_POST['id'];
     $judul    = $_POST['judul'];
