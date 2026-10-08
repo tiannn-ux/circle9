@@ -19,7 +19,7 @@ $result = mysqli_query($koneksi, $query);
   <nav class="navbar navbar-expand-lg navbar-dark navbar-github shadow-sm">
     <div class="container">
       <a class="navbar-brand fw-bold" href="index.php">
-        <span class="text-gold">★</span> IT Helpdesk System
+        <span class="text-gold"></span> IT Helpdesk System
       </a>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
@@ -37,7 +37,7 @@ $result = mysqli_query($koneksi, $query);
   <div class="container my-5">
     <div class="d-flex justify-content-between align-items-center mb-4">
       <div>
-        <h2 class="fw-bold mb-1">Modul Knowledge Base & FAQ</h2>
+        <h2 class="fw-bold mb-1">Knowledge Base & FAQ</h2>
         <p class="text-github-muted mb-0">Kelola master artikel solusi teknis, panduan mandiri, dan langkah troubleshooting.</p>
       </div>
       <a href="tambah.php" class="btn btn-custom-gold">+ Tambah Artikel</a>
