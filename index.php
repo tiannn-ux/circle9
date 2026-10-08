@@ -36,6 +36,11 @@
         <td>
           <a href="hapus.php?id=<?php echo $baris['id']; ?>" class="btn btn-danger btn-sm" onclick="return confirm('Yakin ingin menghapus data ini?')">Hapus</a>
         </td> 
+        <td>
+      
+          <a href="edit.php?id=<?php echo $baris['id']; ?>" class="btn btn-warning btn-sm">Edit</a>
+        
+        </td> 
       </tr>
     <?php
     } 

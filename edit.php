@@ -1,20 +1,34 @@
 <?php
-require "koneksi.php";
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
- $jenis_gangguan = $_POST["jenis_gangguan"];
- $tingkat_prioritas = $_POST["tingkat_prioritas"];
- $deskripsi_gangguan = $_POST["deskripsi_gangguan"];
+include 'koneksi.php';
 
- $sql = "INSERT INTO gangguan (jenis_gangguan, tingkat_prioritas, deskripsi_gangguan)
- VALUES ('$jenis_gangguan', '$tingkat_prioritas, '$deskripsi_gangguan')";
- mysqli_execute_query($koneksi, $sql,
- [$jenis_gangguan, $tingkat_prioritas, $deskripsi_gangguan]);
- header("Location: index.php");
- exit;
+// Tambahkan baris ini untuk menangkap ID dari URL
+$id = $_GET['id'];
+
+// Baru setelah itu lakukan pengecekan
+if (!$id) {
+    header("Location: index.php");
+    exit();
+}
+
+$query      = "SELECT * FROM gangguan WHERE id = '$id'";
+$hasil      = mysqli_query($koneksi, $query);
+$data       = mysqli_fetch_assoc($hasil);
+
+if (!$data) {
+    header("Location: index.php");
+    exit();
 }
 ?>
-
+<!-- Sisa kodingan HTML-mu di bawahnya biarkan saja -->
 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
@@ -53,6 +67,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <hr>
 
             <form action="simpan.php" method="POST">
+                <input type="hidden" name="id" value="<?= $data['id']; ?>">
 
                 <div class="mb-3">
                     <label for="gangguan" class="form-label">
@@ -129,5 +144,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     </main>
 
+</body>
+</html>
 </body>
 </html>
