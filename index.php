@@ -13,6 +13,8 @@
       <th scope="col">No.</th>
       <th scope="col">Jenis Gangguan IT</th>
       <th scope="col">Tingkat Prioritas</th>
+      <th scope="col">Deskripsi Gangguan</th>
+
     </tr>
   </thead>
   <tbody>
@@ -20,16 +22,19 @@
       <th scope="row">1</th>
       <td>Software</td>
       <td>Tinggi</td>
+      <td>Aplikasi tidak berjalan semestinya</td>
     </tr>
     <tr>
       <th scope="row">2</th>
       <td>Network</td>
       <td>Rendah</td>
+      <td>Internet lemot</td>
     </tr>
     <tr>
       <th scope="row">3</th>
       <td>Hardware</td>
       <td>Tinggi</td>
+      <td>Perangkat mudah overheat</td>
     </tr>
   </tbody>
 </table>

@@ -17,7 +17,7 @@
             </a>
 
             <div>
-                <a href="index.html" class="btn btn-light">
+                <a href="index.php" class="btn btn-light">
                     Gangguan IT
                 </a>
             </div>
@@ -37,7 +37,7 @@
 
             <hr>
 
-            <form action="#" method="POST">
+            <form action="simpan.php" method="POST">
 
                 <div class="mb-3">
                     <label for="gangguan" class="form-label">
@@ -74,6 +74,22 @@
                     </select>
 
                 </div>
+                <div class="mb-3">
+                    <label for="deskripsi" class="form-label">
+                        Deskripsi Gangguan
+                    </label>
+
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="deskripsi"
+                        name="deskripsi"
+                        placeholder="Deskripsikan gangguan"
+                        required
+
+                    >
+                </div>
+
                 <div class="mt-4">
 
                     <button
@@ -84,7 +100,7 @@
                     </button>
 
                     <a
-                        href="index.html"
+                        href="index.php"
                         class="btn btn-secondary"
                     >
                         Batal
