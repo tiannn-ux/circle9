@@ -1,10 +1,7 @@
 <?php
 include 'koneksi.php';
-
-// Tambahkan baris ini untuk menangkap ID dari URL
 $id = $_GET['id'];
 
-// Baru setelah itu lakukan pengecekan
 if (!$id) {
     header("Location: index.php");
     exit();
@@ -19,7 +16,7 @@ if (!$data) {
     exit();
 }
 ?>
-<!-- Sisa kodingan HTML-mu di bawahnya biarkan saja -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -66,80 +63,49 @@ if (!$data) {
 
             <hr>
 
-            <form action="simpan.php" method="POST">
-                <input type="hidden" name="id" value="<?= $data['id']; ?>">
+            <form action="proses-edit.php" method="POST">
+                <input type="hidden" name="id" value="<?php echo $data['id']; ?>">
 
                 <div class="mb-3">
-                    <label for="gangguan" class="form-label">
-                        Jenis Gangguan IT
-                    </label>
+                <label for="gangguan" class="form-label">Jenis Gangguan IT</label>
+               
+                <input
+                    type="text"
+                    class="form-control"
+                    id="gangguan"
+                    name="jenis_gangguan"
+                    value="<?php echo $data['jenis_gangguan']; ?>"
+                    required
+                >
+                    </div>
 
-                    <input
-                        type="text"
-                        class="form-control"
-                        id="gangguan"
-                        name="gangguan"
-                        placeholder="Masukkan jenis gangguan"
-                        required
+                    <div class="mb-3">
+                        <label for="prioritas" class="form-label">Tingkat Prioritas</label>
+                        <select class="form-select" id="prioritas" name="tingkat_prioritas" required>
+                            <option value="Tinggi" <?php if($data['tingkat_prioritas'] == 'Tinggi') echo 'selected'; ?>>Tinggi</option>
+                            <option value="Sedang" <?php if($data['tingkat_prioritas'] == 'Sedang') echo 'selected'; ?>>Sedang</option>
+                            <option value="Rendah" <?php if($data['tingkat_prioritas'] == 'Rendah') echo 'selected'; ?>>Rendah</option>
+                        </select>
+                    </div>
 
-                    >
-                </div>
+                    <div class="mb-3">
+                        <label for="deskripsi" class="form-label">Deskripsi Gangguan</label>
+                        
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="deskripsi"
+                            name="deskripsi_gangguan"
+                            value="<?php echo $data['deskripsi_gangguan']; ?>"
+                            required
+                        >
+                    </div>
 
-                <div class="mb-3">
-
-                    <label for="prioritas" class="form-label">
-                        Tingkat Prioritas
-                    </label>
-
-                    <select
-                        class="form-select"
-                        id="prioritas"
-                        name="prioritas"
-                        required
-                    >
-                        <option value="">-- Pilih Jenis Gangguan --</option>
-                        <option value="Tinggi">Tinggi</option>
-                        <option value="Sedang">Sedang</option>
-                        <option value="Rendah">Rendah</option>
-                    </select>
-
-                </div>
-                <div class="mb-3">
-                    <label for="deskripsi" class="form-label">
-                        Deskripsi Gangguan
-                    </label>
-
-                    <input
-                        type="text"
-                        class="form-control"
-                        id="deskripsi"
-                        name="deskripsi"
-                        placeholder="Deskripsikan gangguan"
-                        required
-
-                    >
-                </div>
-
-                <div class="mt-4">
-
-                    <button
-                        type="submit"
-                        class="btn btn-primary"
-                    >
-                        Simpan Data
-                    </button>
-
-                    <a
-                        href="index.php"
-                        class="btn btn-secondary"
-                    >
-                        Batal
-                    </a>
-
-                </div>
-
+                    <div class="mt-4">
+                        <button type="submit" class="btn btn-primary">Update Data</button>
+                        <a href="index.php" class="btn btn-secondary">Batal</a>
+                    </div>
             </form>
-
         </div>
 
     </main>
