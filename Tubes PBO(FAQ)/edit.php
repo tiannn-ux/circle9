@@ -32,7 +32,7 @@ if (!$data) {
   <nav class="navbar navbar-expand-lg navbar-dark navbar-github shadow-sm">
     <div class="container">
       <a class="navbar-brand fw-bold" href="index.php">
-        <span class="text-gold">★</span> IT Helpdesk System
+        <span class="text-gold"></span> IT Helpdesk System
       </a>
     </div>
   </nav>
@@ -45,7 +45,7 @@ if (!$data) {
           <h3 class="fw-bold mb-3 text-gold border-bottom border-secondary pb-2">Edit Artikel Solusi</h3>
           
           <form action="proses-edit.php" method="POST">
-            
+
             <!-- input id hidden cenah -->
             <input type="hidden" name="id" value="<?= $data['id']; ?>">
 
@@ -67,7 +67,7 @@ if (!$data) {
                 </select>
               </div>
 
-              <!-- Nama mu siapa? -->
+              <!-- Nama mu siapa? --> 
               <div class="col-md-6 mb-3">
                 <label class="form-label fw-semibold">Nama Penulis / Teknisi</label>
                 <input type="text" class="form-control form-control-github" name="penulis" value="<?= htmlspecialchars($data['penulis']); ?>" required>
