@@ -9,6 +9,7 @@ if (isset($_POST['simpan'])) {
     $kontak = $_POST['kontak'];
     $deskripsi = $_POST['deskripsi'];
 
+
     $query = mysqli_query($koneksi, "INSERT INTO teknisi
         (nama, keahlian, kontak, deskripsi)
         VALUES

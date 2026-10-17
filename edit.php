@@ -20,7 +20,7 @@ if (isset($_POST['update'])) {
         kontak='$kontak',
         deskripsi='$deskripsi'
         WHERE id='$id'
-    ");
+    "); 
 
     header("Location: index.php");
     exit;
