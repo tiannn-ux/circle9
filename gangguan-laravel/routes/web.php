@@ -24,12 +24,28 @@ Route::get('/daftar-gangguan', [GangguanController::class, 'daftar'])->name('gan
 Route::get('/', [GangguanController::class, 'index'])->name('home');
 Route::post('/gangguan', [GangguanController::class, 'store'])->name('gangguan.store');
 
-Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
-Route::post('/login', [AuthController::class, 'login'])->name('login.proses');
-Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+Route::middleware('guest')->group(function () {
+    Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
+    Route::post('/login', [AuthController::class, 'login'])->name('login.proses');
+});
 
 Route::middleware('auth')->group(function () {
-Route::get('/gangguan/{gangguan}/edit', [GangguanController::class, 'edit'])->name('gangguan.edit');
-Route::put('/gangguan/{gangguan}', [GangguanController::class, 'update'])->name('gangguan.update');
-Route::delete('/gangguan/{gangguan}', [GangguanController::class, 'destroy'])->name('gangguan.destroy');
+    Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+    Route::get('/gangguan/{gangguan/edit', [GangguanController::class, 'edit'])
+        ->name('gangguan.edit')
+        ->can('update', 'gangguan');
+
+    Route::middleware('role:admin, teknisi')->group(function () {
+        Route::get('/gangguan/{gangguan}/edit', [GangguanController::class, 'edit'])->name('gangguan.edit');
+        Route::put('/gangguan/{gangguan}', [GangguanController::class, 'update'])->name('gangguan.update');
 });
+
+    Route::delete('/gangguan/{gangguan}', [GangguanController::class, 'destroy'])
+        ->name('gangguan.destroy')
+        ->can('delete', 'gangguan')
+        ->middleware('role:admin');
+});
+
+Route::get('/Laporan-admin', [GangguanController::class, 'laporan'])
+    ->middleware(['auth', 'can:akses-admin'])
+    ->name('laporan.admin');

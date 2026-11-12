@@ -39,12 +39,16 @@ class GangguanController extends Controller
     }
     public function update(Request $request, Gangguan $gangguan)
     {
+        $this->authorize('update', $gangguan);
+
         $data = $request->validate([
-        'jenis_gangguan' => 'required|max:100',
-        'tingkat_prioritas' => 'required|in:Tinggi,Sedang,Rendah',
-        'deskripsi_gangguan' => 'required|max:200',
+            'jenis_gangguan' => 'required|max:100',
+            'tingkat_prioritas' => 'required|in:Tinggi,Sedang,Rendah',
+            'deskripsi_gangguan' => 'required|max:200',
         ]);
-    $gangguan->update($data);
+
+        $gangguan->update($data);
+        
         return redirect()->route('gangguan.daftar')->with('success', 'Ajuan Gangguan berhasil diperbarui');
     }
 

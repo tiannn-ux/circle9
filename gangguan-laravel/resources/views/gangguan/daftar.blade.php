@@ -70,7 +70,12 @@
                                     <td>{{ $item->deskripsi_gangguan }}</td>
                                     @auth
                                     <td class="text-center">
+
+                                    @can('update', $item)
                                         <a href="{{ route('gangguan.edit', $item) }}" class="btn btn-warning btn-sm me-1">Edit</a>
+                                    @endcan
+
+                                        @can('akses-admin')
                                         <form action="{{ route('gangguan.destroy', $item) }}" method="POST"
                                             class="d-inline"
                                             onsubmit="return confirm('Apakah Anda yakin ingin menghapus data ini?')">
@@ -78,6 +83,7 @@
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-sm btn-danger">Hapus</button>
                                         </form>
+                                        @endcan
                                     </td>
                                     @endauth
                                 </tr>

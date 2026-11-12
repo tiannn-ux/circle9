@@ -46,4 +46,10 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    //fungsi untuk mengecek hak akses
+    public function hasRole(string ...$roles):bool
+    {
+        return in_array($this->role, $roles, true);
+    }
 }
